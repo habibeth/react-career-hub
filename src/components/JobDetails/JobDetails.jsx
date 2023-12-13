@@ -7,6 +7,10 @@ import { FiPhone } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 import { IoLocationOutline } from "react-icons/io5";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { savedJobApplication } from "../Utility/LocalStorage";
+
 
 const JobDetails = () => {
     const jobs = useLoaderData();
@@ -15,7 +19,12 @@ const JobDetails = () => {
 
     const job = jobs.find(job => job.id === idInt)
     const { job_title, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
-    const { phone, email, address } = contact_information
+    const { phone, email, address } = contact_information;
+
+    const handleApplyJob=()=>{
+        savedJobApplication(idInt);
+        toast('You Have Applied Successfully')
+    }
 
     return (
         <div className="">
@@ -77,7 +86,8 @@ const JobDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="btn w-full mt-6 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">Apply Now</button>
+                    <button onClick={handleApplyJob} className="btn w-full mt-6 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">Apply Now</button>
+                    <ToastContainer></ToastContainer>
                 </div>
             </div>
 
