@@ -14,11 +14,11 @@ const JobDetails = () => {
     const idInt = parseInt(id);
 
     const job = jobs.find(job => job.id === idInt)
-    const { job_title, company_name, remote_or_onsite, location, job_type, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
+    const { job_title, salary, job_description, job_responsibility, educational_requirements, experiences, contact_information } = job;
     const { phone, email, address } = contact_information
 
     return (
-        <div>
+        <div className="">
             <h2
                 style={{
                     background: `url(${bg1}), url(${bg2})`,

@@ -32,7 +32,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-gradient-to-r from-sky-500 to-indigo-500">Star Applying</a>
+                <a className="btn bg-gradient-to-r from-sky-500 to-indigo-500 text-white">Star Applying</a>
             </div>
         </div>
     );
